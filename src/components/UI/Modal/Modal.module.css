@@ -19,15 +19,15 @@
   height: 558px;
   display: flex;
   position: relative;
-  padding: 40px 50px; /* Верхній і нижній відступи 40px, бічні 50px */
+  padding: 40px 50px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
 
 .closeButton {
   position: absolute;
-  top: 10px; /* Відступ хрестика від верхньої частини */
-  right: 10px; /* Відступ хрестика від правої частини */
+  top: 10px;
+  right: 10px;
   background: none;
   border: none;
   font-size: 24px;
@@ -67,7 +67,7 @@
   margin: 0;
   font-size: 35px;
   font-weight: bold;
-  margin-bottom: 20px; /* Відступ між назвою і наступним блоком */
+  margin-bottom: 20px;
 }
 
 .rating,
@@ -75,7 +75,7 @@
 .originalTitle,
 .genres {
   margin: 0;
-  margin-bottom: 10px; /* Відступи між описами */
+  margin-bottom: 10px;
   font-size: 18px;
   line-height: 1.5;
 }
@@ -102,28 +102,28 @@
 
 .overview {
   font-size: 16px;
-  line-height: 1.4; /* Висота рядка */
-  max-height: 160px; /* Висота контейнера */
-  overflow: hidden; /* Приховує надлишок тексту */
-  text-overflow: ellipsis; /* Додає три крапки при переповненні */
-  display: -webkit-box; /* Для багаторядкового контейнера */
-  -webkit-line-clamp: 8; /* Максимум 8 рядків у контейнері */
-  -webkit-box-orient: vertical; /* Задає вертикальну орієнтацію тексту */
-  text-align: left; /* Вирівнювання тексту по лівому краю */
-  margin-top: 10px; /* Відступ між заголовком "Опис" і текстом */
+  line-height: 1.4;
+  max-height: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  text-align: left;
+  margin-top: 10px;
 }
 
 .overview strong {
-  display: block; /* "Опис" переносимо на окремий рядок */
-  margin-bottom: 10px; /* Відступ після слова "Опис" */
-  text-align: left; /* Вирівнювання по лівому краю */
+  display: block;
+  margin-bottom: 10px;
+  text-align: left;
 }
 
 .buttonCont {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-top: 20px; /* Відступ до кнопок 20px */
+  margin-top: 20px;
 }
 
 .modalBtrn {

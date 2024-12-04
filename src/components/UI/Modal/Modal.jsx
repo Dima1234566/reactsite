@@ -7,7 +7,6 @@ function Modal({ film, onClose }) {
   const [watch, setWatch] = useState([]);
   const [queue, setQueue] = useState([]);
 
-  // Завантажуємо дані з localStorage
   useEffect(() => {
     const storedWatch = JSON.parse(localStorage.getItem("watch")) || [];
     const storedQueue = JSON.parse(localStorage.getItem("queue")) || [];
@@ -15,7 +14,6 @@ function Modal({ film, onClose }) {
     setQueue(storedQueue);
   }, [refresh]);
 
-  // Оновлюємо активний клас залежно від наявності фільму в черзі чи переглянутих
   useEffect(() => {
     if (queue.includes(film.id)) {
       setActive("queue");
@@ -24,51 +22,44 @@ function Modal({ film, onClose }) {
     }
   }, [queue, watch, film.id]);
 
-  // Функція для додавання/видалення фільму з "переглянутих"
   const handleWatch = (id) => {
     if (watch.includes(id)) {
-      // Видаляємо з "переглянутих"
       const updatedWatch = watch.filter((item) => item !== id);
       setWatch(updatedWatch);
       localStorage.setItem("watch", JSON.stringify(updatedWatch));
-      setActive(""); // Знімаємо активний клас
+      setActive("");
     } else {
-      // Якщо фільм є в черзі, спочатку видаляємо його з черги
       if (queue.includes(id)) {
         const updatedQueue = queue.filter((item) => item !== id);
         setQueue(updatedQueue);
         localStorage.setItem("queue", JSON.stringify(updatedQueue));
       }
 
-      // Додаємо в "переглянуті"
       const updatedWatch = [...watch, id];
       setWatch(updatedWatch);
       localStorage.setItem("watch", JSON.stringify(updatedWatch));
-      setActive("watch"); // Оновлюємо активний клас
+      setActive("watch");
     }
   };
 
-  // Функція для додавання/видалення фільму з черги
   const handleQueue = (id) => {
     if (queue.includes(id)) {
       // Видаляємо з черги
       const updatedQueue = queue.filter((item) => item !== id);
       setQueue(updatedQueue);
       localStorage.setItem("queue", JSON.stringify(updatedQueue));
-      setActive(""); // Знімаємо активний клас
+      setActive("");
     } else {
-      // Якщо фільм є в переглянутих, спочатку видаляємо його з переглянутих
       if (watch.includes(id)) {
         const updatedWatch = watch.filter((item) => item !== id);
         setWatch(updatedWatch);
         localStorage.setItem("watch", JSON.stringify(updatedWatch));
       }
 
-      // Додаємо в чергу
       const updatedQueue = [...queue, id];
       setQueue(updatedQueue);
       localStorage.setItem("queue", JSON.stringify(updatedQueue));
-      setActive("queue"); // Оновлюємо активний клас
+      setActive("queue");
     }
   };
 
@@ -79,7 +70,7 @@ function Modal({ film, onClose }) {
           ✖
         </button>
         <div className={styles.modalBody}>
-          {/* Ліва частина */}
+          {}
           <div className={styles.imageContainer}>
             <img
               src={`${process.env.REACT_APP_IMG_URL}${film.poster_path}`}
@@ -87,7 +78,7 @@ function Modal({ film, onClose }) {
             />
           </div>
 
-          {/* Права частина */}
+          {}
           <div className={styles.details}>
             <h2 className={styles.title}>{film.title}</h2>
             <p className={styles.rating}>

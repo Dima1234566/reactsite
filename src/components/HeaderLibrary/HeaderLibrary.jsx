@@ -58,5 +58,3 @@ function HeaderLibrary() {
 }
 
 export default HeaderLibrary;
-
-//librari_header
