@@ -47,7 +47,6 @@ function Librarys() {
     setModalOpen(false);
     setSelectedFilm(null);
   };
-  console.log(watchList);
   return (
     <div className={styles.library}>
       {activeBtn === "watch" && (

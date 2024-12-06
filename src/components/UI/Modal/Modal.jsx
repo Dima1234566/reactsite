@@ -44,7 +44,6 @@ function Modal({ film, onClose }) {
 
   const handleQueue = (id) => {
     if (queue.includes(id)) {
-      // Видаляємо з черги
       const updatedQueue = queue.filter((item) => item !== id);
       setQueue(updatedQueue);
       localStorage.setItem("queue", JSON.stringify(updatedQueue));
@@ -70,7 +69,6 @@ function Modal({ film, onClose }) {
           ✖
         </button>
         <div className={styles.modalBody}>
-          {}
           <div className={styles.imageContainer}>
             <img
               src={`${process.env.REACT_APP_IMG_URL}${film.poster_path}`}
@@ -78,7 +76,6 @@ function Modal({ film, onClose }) {
             />
           </div>
 
-          {}
           <div className={styles.details}>
             <h2 className={styles.title}>{film.title}</h2>
             <p className={styles.rating}>

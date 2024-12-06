@@ -9,7 +9,7 @@ function Card({ film }) {
   const [selectedFilm, setSelectedFilm] = useState(null);
 
   const openModal = (film) => {
-    if (!film.genres[0].name) {
+    if (film.genre_ids) {
       const filmWithGenres = {
         ...film,
 
@@ -22,13 +22,12 @@ function Card({ film }) {
     } else {
       const filmWithGenres = {
         ...film,
-
         genres: film.genres.map((genre) => genre.name),
       };
+      console.log(filmWithGenres);
       setSelectedFilm(filmWithGenres);
       setModalOpen(true);
     }
-
     const closeModal = () => {
       setModalOpen(false);
       setSelectedFilm(null);
@@ -61,6 +60,11 @@ function Card({ film }) {
   } else {
     selectedGenres = genres.map((genre) => genre.name);
   }
+  const genreMap = genres.reduce((acc, genre) => {
+    acc[genre.id] = genre.name;
+    return acc;
+  }, {});
+
   return (
     <main className={styles.card}>
       <div className={styles.container} onClick={() => openModal(film)}>
@@ -72,12 +76,22 @@ function Card({ film }) {
         />
         <div className={styles.about}>
           <h2 className={styles.name}>{film.title.toUpperCase()}</h2>
-          <div className={styles.genre}>
-            {selectedGenres.map((el) => (
-              <p key={el}>{el.toUpperCase()}</p>
-            ))}{" "}
-            <p>|</p> <p>{film.release_date.split("-")[0]}</p>
-          </div>
+          {film.genre_ids && (
+            <div className={styles.genre}>
+              {film.genre_ids.map((el, index) => (
+                <p key={index}>{genreMap[el]}</p>
+              ))}{" "}
+              <p>|</p> <p>{film.release_date.split("-")[0]}</p>
+            </div>
+          )}
+          {film.genres && (
+            <div className={styles.genre}>
+              {film.genres.map((el) => (
+                <p key={el}>{el.name.toUpperCase()}</p>
+              ))}{" "}
+              <p>|</p> <p>{film.release_date.split("-")[0]}</p>
+            </div>
+          )}
         </div>
       </div>
 
