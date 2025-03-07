@@ -24,7 +24,6 @@ function Card({ film }) {
         ...film,
         genres: film.genres.map((genre) => genre.name),
       };
-      console.log(filmWithGenres);
       setSelectedFilm(filmWithGenres);
       setModalOpen(true);
     }

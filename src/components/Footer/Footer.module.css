@@ -1,4 +1,12 @@
-.footer p{
-    display: flex;
-        align-items: center;
+.footer span {
+  margin: 0 auto;
+}
+
+.container {
+  width: 100vw;
+  height: 10vh;
+  background-color: #e4e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

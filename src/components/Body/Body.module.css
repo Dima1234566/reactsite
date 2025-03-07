@@ -5,7 +5,14 @@
 }
 
 .container {
-  width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards {
+  width: 1800px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,4 +20,51 @@
   margin: 0 auto;
   margin-top: 60px;
   gap: 20px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  color: #333;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination button:hover {
+  background-color: #ddd;
+}
+
+.pagination button.active {
+  background-color: #ff6b08;
+  color: white;
+  border-color: #ff6b08;
+}
+
+.search {
+  margin-top: -70px;
+}
+.search_img {
+  margin-left: -12px;
+  cursor: pointer;
+}
+
+.body input {
+  width: 250px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid;
+  color: #fff;
+  outline: none;
+  font-size: 14px;
+  padding: 5px;
+  margin-top: 10px;
 }

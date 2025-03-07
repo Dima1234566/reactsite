@@ -1,13 +1,14 @@
-
 import styles from "./Footer.module.css";
 function Footer() {
-    return (
+  return (
     <main className={styles.footer}>
-          
-    <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan
-          tort
-     </p>
-    </main>);
+      <div className={styles.container}>
+        <span>
+          Stay calm and watch films. To contact me write HERE:
+          dimastan18@gmail.com
+        </span>
+      </div>
+    </main>
+  );
 }
 export default Footer;
